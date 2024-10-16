@@ -1,0 +1,30 @@
+# Node.js ve npm ile ilgili
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Electron ile ilgili
+dist/
+*.asar
+*.exe
+*.app
+*.dmg
+*.tar.gz
+
+# SQLite veritabanı dosyası
+personal-finance.db
+
+# Uygulama geçici dosyaları
+*.tmp
+*.log
+
+# IDE ve editör ayar dosyaları
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Çalışma zamanı dosyaları
+.DS_Store
+Thumbs.db

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+    <title>Expenses</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="draggable">
+            <div class="icon-container">
+                <button id="minimize">_</button>
+                <button id="maximize">□</button>
+                <button id="close">X</button>
+            </div>
+        </div>
+        <header>
+            <a href="../index.html">
+
+                <img src="../../assets/icon.png" alt="Personal Finance" class="logo">
+            </a>
+            <h1>Expenses Management</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="income.html">Income</a></li>
+                <li><a href="expenses.html" class="active">Expenses</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="budget.html">Budget</a></li>
+
+            </ul>
+        </nav>
+
+        <main>
+            <section>
+                <div>
+                    <h2>Your Expenses</h2>
+                    <form id="expense-form">
+                        <label for="expense-category">Category:</label>
+                        <select id="expense-category" required>
+                            <option value="" disabled selected>Select Category ...</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Groceries">Groceries</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                        <label for="expense-amount">Amount:</label>
+                        <input type="number" id="expense-amount" placeholder="Expense Amount" required>
+
+                        <label for="expense-date">Date:</label>
+                        <input type="date" id="expense-date" required>
+
+                        <button type="submit">Add Expense</button>
+                    </form>
+                </div>
+
+
+                <div>
+                    <h2>Expense List</h2>
+
+                    <p id="income-header"> <span>Expense Source</span><em>Amount</em>
+                        <em>Date</em><strong>Action</strong>
+                    </p>
+
+                    <ul id="expense-list">
+                        <!-- Expense entries will be added here -->
+                    </ul>
+
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <p> <span id="yearInput"></span> Personal Finance App <sup>&copy;</sup></p>
+        </footer>
+    </div>
+
+    <script src="../renderer.js"></script>
+</body>
+
+</html>

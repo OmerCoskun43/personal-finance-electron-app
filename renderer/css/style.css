@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #8fedfa;
+    color: #333;
+     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#draggable {
+  -webkit-app-region: drag;
+  position: fixed; /* Bu ayar doğruysa tutun */
+  top: 10px; /* Üstten biraz boşluk bırakmak için ayarlayın */
+  right: 10px; /* Sağdan biraz boşluk bırakmak için ayarlayın */
+  width: 100%;
+  z-index: 20;
+}
+
+.icon-container{
+     display: flex;
+  gap: 10px; /* İkonlar arasında boşluk */
+  justify-content: end;
+  margin-right: 5px;
+  
+
+
+    button{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: purple;
+        background-color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        -webkit-app-region: no-drag;
+
+        &:hover{
+            color: white;
+            background-color: purple;
+            cursor: pointer;
+        }
+
+    }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    
+}
+
+header .logo {
+    width: 50px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: crimson;
+    font-weight: bold;
+   }
+
+
+
+
+   
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: blueviolet;
+    padding: 15px 0px;
+    border-radius: 0.5rem;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+     color: chartreuse;
+    
+}
+
+main {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 1;
+    
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    /* width: 320px; */
+    gap: 0.5rem;
+    justify-content: space-between;
+     margin-top: 20px; 
+    }
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: #4CAF50;
+}
+
+#expenseChart {
+    /* width: 415px !important; */
+    height: 380px !important;
+    
+}
+
+
+.charts {
+    margin-top: 20px;
+}
+
+.charts h2, .finance-goals h2 .summary h2 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.finance-goals {
+    margin-top: 18px;    
+    font-family: 'Arial', sans-serif; /* Daha modern bir yazı tipi */
+    
+    h2 {
+        
+        font-weight: bold;
+        color: #333; /* Başlığa daha koyu bir renk verelim */
+    }
+
+    
+
+    #goals-list {
+        list-style-type: none;
+        background-color: white;
+        border-radius: 12px;
+        margin-top: 10px;
+        padding: 10px;
+        /* width: 415px; */
+        height: 330px;
+        
+    }
+
+
+    #goal-header{
+        background-color: red;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        font-weight: bold;
+        margin-top: 15px;
+        span{
+            width: 44%;
+        }
+
+        em{
+            width: 28%;
+        }
+    }
+    
+    #goals-list li  {
+        padding: 8px 0; /* Liste elemanlarına biraz boşluk */
+        font-size: 1rem; /* Yazı boyutunu biraz büyütelim */
+        color: #555; /* Yazı rengi daha açık gri */
+        border-bottom: 1px solid #eaeaea; /* Alt çizgiler */
+        display: flex;
+        justify-content: space-around;
+        
+
+        span{
+            width: 44%;
+        }
+
+        em{
+            width: 28%;
+        }
+    }
+
+    #goals-list li:last-child {
+        border-bottom: none; /* Son eleman için alt çizgi olmasın */
+    }
+
+    button {
+        margin-top: 20px;
+        background-color: #007BFF; /* Canlı bir mavi buton rengi */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3; /* Hover'da daha koyu mavi */
+    }
+}
+
+.delete-goal{
+    display: none;
+}
+
+#goal-total{
+    background-color: black;
+    color: white !important;
+    justify-content: space-between !important;
+    padding: 10px 5px !important;
+    border-radius: 5px;
+    margin-right: 15px;
+    
+}
+
+.date-selection{
+    margin-left: 10px;
+    margin-top: 5px;
+
+    h2{
+        font-size: 18px;
+    }
+
+    input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 32%;
+    cursor: pointer
+      
+    }
+
+    button{
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 30%;
+    background-color: rgb(21, 21, 243);
+    color: white;
+    font-weight: bold;
+    &:hover{
+        background-color: rgb(8, 8, 141);
+        cursor: pointer;
+    }
+
+    }
+}
+
+canvas {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+footer {
+    background-color: rgb(42, 42, 214); /* Koyu arka plan rengi */
+    color: #ffffff; /* Yazı rengi beyaz */
+    text-align: center;
+    padding: 20px 0; /* Yukarı ve aşağı padding */
+    margin-top: 20px; /* Üstten boşluk */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Üst kenar gölgesi */
+    border-radius: 10px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin: 0; /* Varsayılan margin'i sıfırla */
+    line-height: 1.5; /* Satır yüksekliği */
+}
+
+footer a {
+    color: #61dafb; /* Link rengi */
+    text-decoration: none; /* Alt çizgi yok */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Hover durumunda alt çizgi ekle */
+}
+
+/* Responsive tasarım için */
+@media (max-width: 600px) {
+    footer {
+        font-size: 0.8rem; /* Küçük ekranlarda yazı boyutunu azalt */
+    }
+}
+
+
+
+#differentDates{
+    display: none;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    padding: 25px 10px 10px 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+    
+
+    span{
+        color: red;
+      
+    }
+    
+}
+
+#clear-button{
+    display: none;
+    background-color: red;
+}
+
+
+/* Media queries ile responsive tasarım */
+@media screen and (max-width: 991px) {
+    #goals-list {
+        width: 735px;        
+       
+    }
+
+   
+
+    .summary {
+        width: 360px;        
+       
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #goals-list {
+        width: 360px; /* Daha geniş ekranlarda belirli bir genişlik */
+       
+    }
+
+    #expense-chart {
+        width: 320px !important;  /* Daha geniş ekranlarda belirli bir genişlik */
+        
+    }
+
+    .summary {
+        width: 300px; /* Daha geniş ekranlarda belirli bir genişlik */
+        
+    }
+   
+}
+
+ @media screen and (min-width: 1118px) {
+    #goals-list {
+        width: 415px; /* Daha geniş ekranlarda belirli bir genişlik */
+       
+    }
+
+    .summary {
+        width: 320px; /* Daha geniş ekranlarda belirli bir genişlik */
+        
+    }
+}

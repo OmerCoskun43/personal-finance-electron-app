@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+    <title>Income</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="draggable">
+            <div class="icon-container">
+                <button id="minimize">_</button>
+                <button id="maximize">□</button>
+                <button id="close">X</button>
+            </div>
+        </div>
+        <header>
+            <a href="../index.html">
+
+                <img src="../../assets/icon.png" alt="Personal Finance" class="logo">
+            </a>
+            <h1>Income Management</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="income.html" class="active">Income</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="budget.html">Budget</a></li>
+
+            </ul>
+        </nav>
+
+        <main>
+            <section>
+                <div>
+                    <h2>Your Income</h2>
+                    <form id="income-form">
+                        <label for="income-source">Source:</label>
+                        <input type="text" id="income-source" placeholder="Income Source" required>
+
+                        <label for="income-amount">Amount:</label>
+                        <input type="number" id="income-amount" placeholder="Income Amount" required>
+
+                        <label for="income-date">Date:</label>
+                        <input type="date" id="income-date" required>
+
+                        <button type="submit">Add Income</button>
+                    </form>
+                </div>
+
+                <div>
+                    <h2>Income List</h2>
+
+                    <p id="income-header"> <span>Goal Source</span><em>Amount</em><em>Date</em> <strong>Action</strong>
+                    </p>
+
+                    <ul id="income-list">
+
+                        <!-- Income entries will be added here -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p> <span id="yearInput"></span> Personal Finance App <sup>&copy;</sup></p>
+        </footer>
+    </div>
+
+    <script src="../renderer.js"></script>
+</body>
+
+</html>

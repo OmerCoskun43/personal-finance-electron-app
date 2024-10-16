@@ -1,0 +1,21 @@
+{
+  "name": "personal-finance-electron-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-packager . PersonalFinanceApp --platform=win32 --arch=x64 --out=dist --overwrite --icon=assets/icons/win/icon.ico --prune=true"
+  },
+  "keywords": [],
+  "author": "Omer COSKUN",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-packager": "^17.1.2",
+    "electron-reload": "^2.0.0-alpha.1"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}

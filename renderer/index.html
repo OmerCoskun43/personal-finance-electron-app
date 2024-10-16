@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline';">
+    <title>Personal Finance Management App</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="draggable">
+            <div class="icon-container">
+                <button id="minimize">_</button>
+                <button id="maximize">□</button>
+                <button id="close">X</button>
+            </div>
+        </div>
+        <header>
+            <a href="index.html">
+
+                <img src="../assets/icon.png" alt="Personal Finance" class="logo">
+            </a>
+            <h1>Personal Finance Management</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="./pages/income.html">Income</a></li>
+                <li><a href="./pages/expenses.html">Expenses</a></li>
+                <li><a href="./pages/goals.html">Goals</a></li>
+                <li><a href="./pages/budget.html">Budget</a></li>
+
+            </ul>
+        </nav>
+
+        <main>
+
+
+            <section class="charts">
+
+                <h2>Expense Categories</h2>
+                <canvas id="expenseChart"></canvas>
+            </section>
+            <section class="summary">
+                <h2>Summary</h2>
+                <section class="date-selection">
+                    <form action="" id="filter-form">
+                        <input type="date" id="month-selector-1" required />
+                        <input type="date" id="month-selector-2" required />
+
+                        <button id="filter-btn" type="submit">Filter</button>
+                        <button id="clear-button" type="reset">Clear</button>
+                    </form>
+                </section>
+
+                <h2 id="differentDates"> </h2>
+                <div class="card">
+                    <h2>Total Income</h2>
+                    <p id="monthly-income">$0.00</p>
+                </div>
+                <div class="card">
+                    <h2>Total Expenses</h2>
+                    <p id="monthly-expense">$0.00</p>
+                </div>
+                <div class="card">
+                    <h2>Remaining Budget</h2>
+                    <p id="remaining-budget">$0.00</p>
+                </div>
+            </section>
+
+            <section class="finance-goals">
+                <h2>Financial Goals</h2>
+
+                <p id="goal-header"> <span>Goal Source</span><em>Amount</em> <em>Date</em></p>
+
+
+                <ul id="goals-list">
+
+                    <!-- Goals will be dynamically added here -->
+                </ul>
+            </section>
+
+
+        </main>
+
+
+        <footer>
+            <p> <span id="yearInput"></span> Personal Finance App <sup>&copy;</sup></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./renderer.js" defer></script>
+</body>
+
+</html>
